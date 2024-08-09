@@ -5,23 +5,21 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.mint</groupId>
-        <artifactId>community-subject</artifactId>
+        <artifactId>community-dependencies</artifactId>
         <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../community-dependencies/pom.xml</relativePath>
     </parent>
-
-    <artifactId>subject-common</artifactId>
+    <artifactId>community-common</artifactId>
+    <packaging>pom</packaging>
+    <description>common通用组件</description>
+    <modules>
+        <module>common-web</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <dependencies>
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
-        </dependency>
-    </dependencies>
 
 </project>

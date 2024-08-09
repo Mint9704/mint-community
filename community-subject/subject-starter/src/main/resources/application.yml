@@ -1,0 +1,42 @@
+server:
+  port: 9001
+spring:
+  datasource:
+    username: root
+    password: mvFPBZcb27McaTFrMYwmawiLonrHARf/QLM1DxZnupRTukb/97R4/q4rM+8M7e6nX10XOg0krZIH1AubtY5kuQ==
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.133.134.62:3306/mint_community?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      connectionProperties: config.decrypt=true;config.decrypt.key=${publicKey};
+      initial-size: 20
+      min-idle: 20
+      max-active: 100
+      max-wait: 60000
+      # 连接池监控
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: 123456
+      filter:
+        stat:
+          enabled: true
+          log-slow-sql: true
+          slow-sql-millis: 2000
+        wall:
+          enabled: true
+        config:
+          enabled: true
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete_field: is_deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  mapper-locations: classpath:mapper/*.xml
+
+publicKey: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAJtrOxMoe8VzSf0VFTDy4qfF9as6gSKYmw9AMzohbkesElAWUqFdF/ZEdUFQ0O3zfacmUanyTzJutXOxQqr/f0MCAwEAAQ==

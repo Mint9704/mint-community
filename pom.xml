@@ -12,5 +12,6 @@
     <modules>
         <module>community-dependencies</module>
         <module>community-subject</module>
+        <module>community-common</module>
     </modules>
 </project>
