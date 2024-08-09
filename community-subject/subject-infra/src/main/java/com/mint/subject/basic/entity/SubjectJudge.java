@@ -10,43 +10,26 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * 题目信息
+ * 判断题
  */
-@TableName("subject_info")
+@TableName("subject_judge")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubjectInfo extends BasePo {
+public class SubjectJudge extends BasePo {
     /**
      * 主键
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
-     * 题目名称
+     * 题目id
      */
-    private String subjectName;
+    private Long subjectId;
     /**
-     * 题目难度
+     * 是否正确
      */
-    private Integer subjectDifficult;
-    /**
-     * 出题人名
-     */
-    private String settleName;
-    /**
-     * 题目类型 1单选 2多选 3判断 4简答
-     */
-    private Integer subjectType;
-    /**
-     * 题目分数
-     */
-    private Integer subjectScore;
-    /**
-     * 题目解析
-     */
-    private String subjectParse;
-
+    private Integer isCorrect;
 }
 
