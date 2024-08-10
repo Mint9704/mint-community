@@ -1,7 +1,7 @@
 package com.mint.subject.basic.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mint.subject.basic.entity.SubjectMapping;
+import com.mint.subject.entity.SubjectMapping;
 import com.mint.subject.basic.mapper.SubjectMappingMapper;
 import com.mint.subject.basic.service.SubjectMappingService;
 import org.springframework.stereotype.Service;

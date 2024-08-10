@@ -2,7 +2,7 @@ package com.mint.subject.basic.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.mint.subject.basic.entity.SubjectRadio;
+import com.mint.subject.entity.SubjectRadio;
 
 public interface SubjectRadioService extends IService<SubjectRadio> {
     int add(SubjectRadio subjectRadio);

@@ -3,7 +3,7 @@ package com.mint.subject.basic.service.impl;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mint.subject.basic.entity.SubjectLabel;
+import com.mint.subject.entity.SubjectLabel;
 import com.mint.subject.basic.mapper.SubjectLabelMapper;
 import com.mint.subject.basic.service.SubjectLabelService;
 import org.springframework.stereotype.Service;

@@ -2,7 +2,7 @@ package com.mint.subject.basic.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.mint.subject.basic.entity.SubjectInfo;
+import com.mint.subject.entity.SubjectInfo;
 
 public interface SubjectInfoService extends IService<SubjectInfo> {
     int add(SubjectInfo subjectInfo);

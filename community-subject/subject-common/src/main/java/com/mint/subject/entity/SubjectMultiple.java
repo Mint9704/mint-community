@@ -1,4 +1,4 @@
-package com.mint.subject.basic.entity;
+package com.mint.subject.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,34 +10,34 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * 题目分类
+ * 多选题
  */
-@TableName("subject_category")
+@TableName("subject_mutiple")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubjectCategory extends BasePo {
+public class SubjectMultiple extends BasePo {
     /**
      * 主键
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
-     * 分类名称
+     * 题目id
      */
-    private String categoryName;
+    private Long subjectId;
     /**
-     * 分类类型
+     * 选项类型
      */
-    private Integer categoryType;
+    private Long optionType;
     /**
-     * 图标连接
+     * 选项内容
      */
-    private String imageUrl;
+    private String optionContent;
     /**
-     * 父级id
+     * 是否正确
      */
-    private Long parentId;
+    private Integer isCorrect;
 }
 

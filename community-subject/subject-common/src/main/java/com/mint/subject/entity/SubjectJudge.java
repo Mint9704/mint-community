@@ -1,4 +1,4 @@
-package com.mint.subject.basic.entity;
+package com.mint.subject.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,14 +10,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * 多选题
+ * 判断题
  */
-@TableName("subject_mutiple")
+@TableName("subject_judge")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubjectMultiple extends BasePo {
+public class SubjectJudge extends BasePo {
     /**
      * 主键
      */
@@ -27,14 +27,6 @@ public class SubjectMultiple extends BasePo {
      * 题目id
      */
     private Long subjectId;
-    /**
-     * 选项类型
-     */
-    private Long optionType;
-    /**
-     * 选项内容
-     */
-    private String optionContent;
     /**
      * 是否正确
      */

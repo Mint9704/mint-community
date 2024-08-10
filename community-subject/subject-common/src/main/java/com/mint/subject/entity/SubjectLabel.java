@@ -1,4 +1,4 @@
-package com.mint.subject.basic.entity;
+package com.mint.subject.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,26 +10,26 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * 判断题
+ * 题目标签表
  */
-@TableName("subject_judge")
+@TableName("subject_Label")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubjectJudge extends BasePo {
+public class SubjectLabel extends BasePo {
     /**
      * 主键
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
-     * 题目id
+     * 标签分类
      */
-    private Long subjectId;
+    private String labelName;
     /**
-     * 是否正确
+     * 排序
      */
-    private Integer isCorrect;
+    private Integer sortNum;
 }
 

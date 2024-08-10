@@ -1,4 +1,4 @@
-package com.mint.subject.basic.entity;
+package com.mint.subject.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,30 +10,43 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * 题目分类标签关系
+ * 题目信息
  */
-@TableName("subject_mapping")
+@TableName("subject_info")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubjectMapping extends BasePo {
+public class SubjectInfo extends BasePo {
     /**
      * 主键
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
-     * 题目id
+     * 题目名称
      */
-    private Long subjectId;
+    private String subjectName;
     /**
-     * 分类id
+     * 题目难度
      */
-    private Long categoryId;
+    private Integer subjectDifficult;
     /**
-     * 标签id
+     * 出题人名
      */
-    private Long labelId;
+    private String settleName;
+    /**
+     * 题目类型 1单选 2多选 3判断 4简答
+     */
+    private Integer subjectType;
+    /**
+     * 题目分数
+     */
+    private Integer subjectScore;
+    /**
+     * 题目解析
+     */
+    private String subjectParse;
+
 }
 

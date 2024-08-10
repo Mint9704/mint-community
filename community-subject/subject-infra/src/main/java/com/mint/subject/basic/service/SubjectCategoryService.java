@@ -2,7 +2,7 @@ package com.mint.subject.basic.service;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.mint.subject.basic.entity.SubjectCategory;
+import com.mint.subject.entity.SubjectCategory;
 
 public interface SubjectCategoryService extends IService<SubjectCategory> {
     int add(SubjectCategory subjectInfo);

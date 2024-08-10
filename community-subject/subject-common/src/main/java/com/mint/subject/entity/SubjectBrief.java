@@ -1,4 +1,4 @@
-package com.mint.subject.basic.entity;
+package com.mint.subject.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,14 +10,14 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * 单选题
+ * 简答题
  */
-@TableName("subject_radio")
+@TableName("subject_brief")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubjectRadio extends BasePo {
+public class SubjectBrief extends BasePo {
     /**
      * 主键
      */
@@ -26,18 +26,10 @@ public class SubjectRadio extends BasePo {
     /**
      * 题目id
      */
-    private Long subjectId;
+    private Integer subjectId;
     /**
-     * a,b,c,d
+     * 题目答案
      */
-    private Integer optionType;
-    /**
-     * 选项内容
-     */
-    private String optionContent;
-    /**
-     * 是否正确
-     */
-    private Integer isCorrect;
+    private String subjectAnswer;
 }
 

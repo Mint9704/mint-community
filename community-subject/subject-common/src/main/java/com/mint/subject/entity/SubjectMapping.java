@@ -1,4 +1,4 @@
-package com.mint.subject.basic.entity;
+package com.mint.subject.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -10,26 +10,30 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 /**
- * 题目标签表
+ * 题目分类标签关系
  */
-@TableName("subject_Label")
+@TableName("subject_mapping")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubjectLabel extends BasePo {
+public class SubjectMapping extends BasePo {
     /**
      * 主键
      */
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
-     * 标签分类
+     * 题目id
      */
-    private String labelName;
+    private Long subjectId;
     /**
-     * 排序
+     * 分类id
      */
-    private Integer sortNum;
+    private Long categoryId;
+    /**
+     * 标签id
+     */
+    private Long labelId;
 }
 
