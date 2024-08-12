@@ -24,9 +24,13 @@ public class SubjectLabel extends BasePo {
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;
     /**
-     * 标签分类
+     * 标签名称
      */
     private String labelName;
+    /**
+     * 分类 id
+     */
+    private Long categoryId;
     /**
      * 排序
      */

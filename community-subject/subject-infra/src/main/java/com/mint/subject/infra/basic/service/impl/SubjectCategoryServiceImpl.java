@@ -3,6 +3,7 @@ package com.mint.subject.infra.basic.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.mint.enums.IsDeletedEnum;
 import com.mint.subject.entity.SubjectCategory;
 import com.mint.subject.infra.basic.mapper.SubjectCategoryMapper;
 import com.mint.subject.infra.basic.service.SubjectCategoryService;
@@ -40,7 +41,7 @@ public class SubjectCategoryServiceImpl extends ServiceImpl<SubjectCategoryMappe
     @Override
     public List<SubjectCategory> list(SubjectCategory subjectCategory) {
         QueryWrapper<SubjectCategory> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("is_deleted", 0);
+        queryWrapper.eq("is_deleted", IsDeletedEnum.UN_DELETED.getCode());
         if (subjectCategory.getId() != null) {
             queryWrapper.eq("id", subjectCategory.getId());
         }

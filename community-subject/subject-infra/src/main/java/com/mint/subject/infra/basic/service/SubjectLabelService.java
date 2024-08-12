@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.mint.subject.entity.SubjectLabel;
 
+import java.util.List;
+
 public interface SubjectLabelService extends IService<SubjectLabel> {
     int add(SubjectLabel subjectLabel);
 
@@ -13,5 +15,7 @@ public interface SubjectLabelService extends IService<SubjectLabel> {
 
     SubjectLabel get(Long id);
 
-    IPage<SubjectLabel> list(SubjectLabel subjectLabel, long pageNum, long pageSize);
+    List<SubjectLabel> list(SubjectLabel subjectLabel);
+
+    List<SubjectLabel> queryByIds(List<Long> ids);
 }

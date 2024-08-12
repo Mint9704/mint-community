@@ -1,14 +1,16 @@
 package com.mint.subject.infra.basic.service.impl;
 
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.mint.enums.IsDeletedEnum;
 import com.mint.subject.entity.SubjectLabel;
 import com.mint.subject.infra.basic.mapper.SubjectLabelMapper;
 import com.mint.subject.infra.basic.service.SubjectLabelService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class SubjectLabelServiceImpl extends ServiceImpl<SubjectLabelMapper, SubjectLabel> implements SubjectLabelService {
@@ -37,8 +39,25 @@ public class SubjectLabelServiceImpl extends ServiceImpl<SubjectLabelMapper, Sub
     }
 
     @Override
-    public IPage<SubjectLabel> list(SubjectLabel subjectLabel, long pageNum, long pageSize) {
-        IPage<SubjectLabel> page = page(new Page<>(pageNum, pageSize));
-        return this.page(page, null);
+    public List<SubjectLabel> list(SubjectLabel subjectLabel) {
+        QueryWrapper<SubjectLabel> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("is_deleted", IsDeletedEnum.UN_DELETED.getCode());
+        if (subjectLabel.getId() != null) {
+            queryWrapper.eq("id", subjectLabel.getId());
+        }
+        if (StringUtils.isNotBlank(subjectLabel.getLabelName())) {
+            queryWrapper.eq("label_name", subjectLabel.getLabelName());
+        }
+        if (subjectLabel.getCategoryId() != null) {
+            queryWrapper.eq("category_id", subjectLabel.getCategoryId());
+        }
+        return subjectLabelMapper.selectList(queryWrapper);
+    }
+
+    @Override
+    public List<SubjectLabel> queryByIds(List<Long> ids) {
+        QueryWrapper<SubjectLabel> queryWrapper = new QueryWrapper<>();
+        queryWrapper.in("id", ids);
+        return subjectLabelMapper.selectList(queryWrapper);
     }
 }
