@@ -34,8 +34,12 @@ public class Result<T> implements Serializable {
         return success(null);
     }
 
-    public static <T> Result<T> failure() {
-        return new Result<>(ResultEnum.FAILURE.getCode(), ResultEnum.FAILURE.getMessage(), null);
+    public static <T> Result<T> fail(T data) {
+        return new Result<>(ResultEnum.FAILURE.getCode(), ResultEnum.FAILURE.getMessage(), data);
+    }
+
+    public static <T> Result<T> fail() {
+        return fail(null);
     }
 
 }

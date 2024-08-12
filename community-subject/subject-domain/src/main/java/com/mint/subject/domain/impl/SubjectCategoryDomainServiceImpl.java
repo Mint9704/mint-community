@@ -3,6 +3,7 @@ package com.mint.subject.domain.impl;
 import com.mint.subject.domain.SubjectCategoryDomainService;
 import com.mint.subject.entity.SubjectCategory;
 import com.mint.subject.infra.basic.service.SubjectCategoryService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * @Author Mint
  * @Create 2024/8/10
  */
+@Service
 public class SubjectCategoryDomainServiceImpl implements SubjectCategoryDomainService {
 
     @Resource
