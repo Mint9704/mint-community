@@ -3,42 +3,42 @@ package com.mint.subject.infra.basic.service.impl;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mint.subject.entity.SubjectInfo;
-import com.mint.subject.infra.basic.mapper.SubjectInfoMapper;
-import com.mint.subject.infra.basic.service.SubjectInfoService;
+import com.mint.subject.entity.SubjectJudge;
+import com.mint.subject.infra.basic.mapper.SubjectJudgeMapper;
+import com.mint.subject.infra.basic.service.SubjectJudgeService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
 @Service
-public class SubjectJudgeServiceImpl extends ServiceImpl<SubjectInfoMapper, SubjectInfo> implements SubjectInfoService {
+public class SubjectJudgeServiceImpl extends ServiceImpl<SubjectJudgeMapper, SubjectJudge> implements SubjectJudgeService {
 
     @Resource
-    private SubjectInfoMapper subjectInfoMapper;
+    private SubjectJudgeMapper subjectJudgeMapper;
 
     @Override
-    public int add(SubjectInfo subjectInfo) {
-        return subjectInfoMapper.insert(subjectInfo);
+    public int add(SubjectJudge subjectJudge) {
+        return subjectJudgeMapper.insert(subjectJudge);
     }
 
     @Override
-    public int update(SubjectInfo subjectInfo) {
-        return subjectInfoMapper.updateById(subjectInfo);
+    public int update(SubjectJudge subjectJudge) {
+        return subjectJudgeMapper.updateById(subjectJudge);
     }
 
     @Override
     public int delete(Long id) {
-        return subjectInfoMapper.deleteById(id);
+        return subjectJudgeMapper.deleteById(id);
     }
 
     @Override
-    public SubjectInfo get(Long id) {
-        return subjectInfoMapper.selectById(id);
+    public SubjectJudge get(Long id) {
+        return subjectJudgeMapper.selectById(id);
     }
 
     @Override
-    public IPage<SubjectInfo> list(SubjectInfo subjectInfo, long pageNum, long pageSize) {
-        IPage<SubjectInfo> page = page(new Page<>(pageNum, pageSize));
+    public IPage<SubjectJudge> list(SubjectJudge subjectJudge, long pageNum, long pageSize) {
+        IPage<SubjectJudge> page = page(new Page<>(pageNum, pageSize));
         return this.page(page, null);
     }
 }
