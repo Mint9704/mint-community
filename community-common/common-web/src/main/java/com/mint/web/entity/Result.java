@@ -1,6 +1,6 @@
-package com.mint.entity;
+package com.mint.web.entity;
 
-import com.mint.enums.ResultEnum;
+import com.mint.web.enums.ResultEnum;
 import lombok.Data;
 
 import java.io.Serializable;

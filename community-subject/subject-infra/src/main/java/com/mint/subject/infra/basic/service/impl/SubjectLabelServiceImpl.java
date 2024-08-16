@@ -3,7 +3,7 @@ package com.mint.subject.infra.basic.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.mint.enums.IsDeletedEnum;
+import com.mint.web.enums.IsDeletedEnum;
 import com.mint.subject.entity.SubjectLabel;
 import com.mint.subject.infra.basic.mapper.SubjectLabelMapper;
 import com.mint.subject.infra.basic.service.SubjectLabelService;

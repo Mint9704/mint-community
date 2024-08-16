@@ -1,6 +1,6 @@
-package com.mint.handler;
+package com.mint.web.handler;
 
-import com.mint.entity.Result;
+import com.mint.web.entity.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

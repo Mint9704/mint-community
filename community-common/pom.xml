@@ -14,6 +14,7 @@
     <description>common通用组件</description>
     <modules>
         <module>common-web</module>
+        <module>common-log</module>
     </modules>
 
     <properties>

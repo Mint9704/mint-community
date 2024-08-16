@@ -1,7 +1,7 @@
 package com.mint.subject.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.mint.entity.Result;
+import com.mint.web.entity.Result;
 import com.mint.subject.entity.SubjectInfo;
 import com.mint.subject.infra.basic.service.SubjectInfoService;
 import org.springframework.web.bind.annotation.*;

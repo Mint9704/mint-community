@@ -1,4 +1,4 @@
-package com.mint.enums;
+package com.mint.web.enums;
 
 import lombok.Getter;
 

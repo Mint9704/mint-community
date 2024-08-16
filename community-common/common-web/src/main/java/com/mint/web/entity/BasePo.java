@@ -1,4 +1,4 @@
-package com.mint.entity;
+package com.mint.web.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
