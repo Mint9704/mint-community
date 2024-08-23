@@ -50,7 +50,6 @@ public class SubjectLabelDomainServiceImpl implements SubjectLabelDomainService 
         SubjectCategory subjectCategory = subjectCategoryService.get(categoryId);
         if (CategoryTypeEnum.PRIMARY.getCode() == subjectCategory.getCategoryType()) {
             SubjectLabel subjectLabel = new SubjectLabel();
-            subjectLabel.setCategoryId(categoryId);
             return subjectLabelService.list(subjectLabel);
         }
 

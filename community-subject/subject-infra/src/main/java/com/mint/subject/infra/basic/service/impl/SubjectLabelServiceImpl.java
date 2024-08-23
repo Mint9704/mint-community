@@ -48,9 +48,6 @@ public class SubjectLabelServiceImpl extends ServiceImpl<SubjectLabelMapper, Sub
         if (StringUtils.isNotBlank(subjectLabel.getLabelName())) {
             queryWrapper.eq("label_name", subjectLabel.getLabelName());
         }
-        if (subjectLabel.getCategoryId() != null) {
-            queryWrapper.eq("category_id", subjectLabel.getCategoryId());
-        }
         return subjectLabelMapper.selectList(queryWrapper);
     }
 

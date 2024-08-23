@@ -37,7 +37,7 @@ public class SubjectCategoryController {
         return Result.success(subjectCategoryDomainService.delete(id));
     }
 
-    @GetMapping("/list")
+    @PostMapping("/list")
     public Result<List<SubjectCategory>> list(@RequestBody SubjectCategory subjectCategory) {
         return Result.success(subjectCategoryDomainService.list(subjectCategory));
     }
