@@ -12,7 +12,7 @@ import lombok.ToString;
 /**
  * 题目标签表
  */
-@TableName("subject_Label")
+@TableName("subject_label")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
