@@ -1,6 +1,10 @@
 package com.mint.subject.controller;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.google.common.base.Preconditions;
+import com.mint.subject.dto.SubjectInfoDTO;
 import com.mint.web.entity.Result;
 import com.mint.subject.entity.SubjectInfo;
 import com.mint.subject.infra.basic.service.SubjectInfoService;
@@ -20,8 +24,15 @@ public class SubjectInfoController {
     private SubjectInfoService subjectInfoService;
 
     @PostMapping("/add")
-    public Result<Integer> addSubject(@RequestBody SubjectInfo subjectInfo) {
-        return Result.success(subjectInfoService.add(subjectInfo));
+    public Result<Integer> addSubject(@RequestBody SubjectInfoDTO subjectInfoDTO) {
+        Preconditions.checkArgument(StringUtils.isNotBlank(subjectInfoDTO.getSubjectName()), "题目名称不能为空");
+        Preconditions.checkNotNull(subjectInfoDTO.getSubjectDifficult(), "题目难度不能为空");
+        Preconditions.checkNotNull(subjectInfoDTO.getSubjectType(), "题目类型不能为空");
+        Preconditions.checkNotNull(subjectInfoDTO.getSubjectScore(), "题目分数不能为空");
+        Preconditions.checkArgument(CollectionUtils.isNotEmpty(subjectInfoDTO.getCategoryIds()), "题目分类不能为空");
+        Preconditions.checkArgument(CollectionUtils.isNotEmpty(subjectInfoDTO.getLabelIds()), "题目标签不能为空");
+
+        return Result.success(subjectInfoService.add(null));
     }
 
     @PutMapping("/update")
