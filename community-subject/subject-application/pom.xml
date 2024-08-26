@@ -12,7 +12,7 @@
     <artifactId>subject-application</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>application-controller</module>
+        <module>subject-application-controller</module>
     </modules>
 
     <properties>
