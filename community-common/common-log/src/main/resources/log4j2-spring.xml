@@ -10,6 +10,7 @@
         <property name="LOG_PATTERN" value="%date{yyyy-MM-dd HH:mm:ss.SSS} %X{PFTID} [%thread] %-5level %logger{36} - %msg%n" />
         <!-- 定义日志存储的路径 -->
         <property name="FILE_PATH" value="../mint-community/log" />
+        <property name="FILE_NAME" value="mint.log" />
     </Properties>
 
     <!--https://logging.apache.org/log4j/2.x/manual/appenders.html-->
