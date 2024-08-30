@@ -3,7 +3,7 @@ package com.mint.subject.controller;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.google.common.base.Preconditions;
 import com.mint.web.entity.Result;
-import com.mint.subject.domain.SubjectCategoryDomainService;
+import com.mint.subject.domain.service.SubjectCategoryDomainService;
 import com.mint.subject.entity.SubjectCategory;
 import org.springframework.web.bind.annotation.*;
 

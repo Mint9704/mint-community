@@ -1,7 +1,7 @@
 package com.mint.subject.controller;
 
 import com.mint.web.entity.Result;
-import com.mint.subject.domain.SubjectLabelDomainService;
+import com.mint.subject.domain.service.SubjectLabelDomainService;
 import com.mint.subject.entity.SubjectLabel;
 import org.springframework.web.bind.annotation.*;
 

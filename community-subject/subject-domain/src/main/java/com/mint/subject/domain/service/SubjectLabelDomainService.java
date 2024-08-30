@@ -1,4 +1,4 @@
-package com.mint.subject.domain;
+package com.mint.subject.domain.service;
 
 import com.mint.subject.entity.SubjectLabel;
 

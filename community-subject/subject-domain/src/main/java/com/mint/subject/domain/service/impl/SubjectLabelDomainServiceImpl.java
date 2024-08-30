@@ -1,7 +1,7 @@
-package com.mint.subject.domain.impl;
+package com.mint.subject.domain.service.impl;
 
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
-import com.mint.subject.domain.SubjectLabelDomainService;
+import com.mint.subject.domain.service.SubjectLabelDomainService;
 import com.mint.subject.entity.SubjectCategory;
 import com.mint.subject.entity.SubjectLabel;
 import com.mint.subject.entity.SubjectMapping;

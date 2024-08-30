@@ -1,6 +1,6 @@
-package com.mint.subject.domain.impl;
+package com.mint.subject.domain.service.impl;
 
-import com.mint.subject.domain.SubjectCategoryDomainService;
+import com.mint.subject.domain.service.SubjectCategoryDomainService;
 import com.mint.subject.entity.SubjectCategory;
 import com.mint.subject.infra.basic.service.SubjectCategoryService;
 import org.springframework.stereotype.Service;
