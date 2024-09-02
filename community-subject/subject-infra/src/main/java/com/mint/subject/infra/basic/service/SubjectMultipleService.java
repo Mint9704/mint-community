@@ -4,8 +4,12 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.mint.subject.entity.SubjectMultiple;
 
+import java.util.List;
+
 public interface SubjectMultipleService extends IService<SubjectMultiple> {
     int add(SubjectMultiple subjectMultiple);
+
+    void batchAdd(List<SubjectMultiple> multipleList);
 
     int update(SubjectMultiple subjectMultiple);
 

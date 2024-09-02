@@ -1,7 +1,11 @@
 package com.mint.subject.domain.handler;
 
 import com.mint.subject.dto.SubjectInfoDTO;
+import com.mint.subject.entity.SubjectJudge;
 import com.mint.subject.enums.SubjectInfoTypeEnum;
+import com.mint.subject.infra.basic.service.SubjectJudgeService;
+
+import javax.annotation.Resource;
 
 /**
  * @Author Mint
@@ -9,6 +13,10 @@ import com.mint.subject.enums.SubjectInfoTypeEnum;
  * 判断题的策略
  */
 public class JudgeTypeHandler implements SubjectTypeHandler{
+
+    @Resource
+    private SubjectJudgeService subjectJudgeService;
+
     @Override
     public SubjectInfoTypeEnum getHandlerType() {
         return SubjectInfoTypeEnum.JUDGE;
@@ -16,6 +24,9 @@ public class JudgeTypeHandler implements SubjectTypeHandler{
 
     @Override
     public void add(SubjectInfoDTO subjectInfoDTO) {
-
+        SubjectJudge judge = new SubjectJudge();
+        judge.setSubjectId(subjectInfoDTO.getId());
+        judge.setIsCorrect(subjectInfoDTO.getIsCorrect());
+        subjectJudgeService.save(judge);
     }
 }

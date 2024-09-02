@@ -12,7 +12,7 @@ import lombok.ToString;
 /**
  * 多选题
  */
-@TableName("subject_mutiple")
+@TableName("subject_multiple")
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor

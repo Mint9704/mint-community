@@ -9,6 +9,7 @@ import com.mint.subject.infra.basic.service.SubjectRadioService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class SubjectRadioServiceImpl extends ServiceImpl<SubjectRadioMapper, SubjectRadio> implements SubjectRadioService {
@@ -22,7 +23,13 @@ public class SubjectRadioServiceImpl extends ServiceImpl<SubjectRadioMapper, Sub
     }
 
     @Override
+    public void batchAdd(List<SubjectRadio> radioList) {
+        this.saveBatch(radioList);
+    }
+
+    @Override
     public int update(SubjectRadio subjectRadio) {
+        this.updateById(subjectRadio);
         return subjectRadioMapper.updateById(subjectRadio);
     }
 

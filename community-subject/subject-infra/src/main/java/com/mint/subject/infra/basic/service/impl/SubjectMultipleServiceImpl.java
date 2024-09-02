@@ -9,6 +9,7 @@ import com.mint.subject.infra.basic.service.SubjectMultipleService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class SubjectMultipleServiceImpl extends ServiceImpl<SubjectMultipleMapper, SubjectMultiple> implements SubjectMultipleService {
@@ -19,6 +20,11 @@ public class SubjectMultipleServiceImpl extends ServiceImpl<SubjectMultipleMappe
     @Override
     public int add(SubjectMultiple subjectMultiple) {
         return subjectMultipleMapper.insert(subjectMultiple);
+    }
+
+    @Override
+    public void batchAdd(List<SubjectMultiple> multipleList) {
+        this.saveBatch(multipleList);
     }
 
     @Override

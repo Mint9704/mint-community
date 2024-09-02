@@ -1,7 +1,11 @@
 package com.mint.subject.domain.handler;
 
 import com.mint.subject.dto.SubjectInfoDTO;
+import com.mint.subject.entity.SubjectBrief;
 import com.mint.subject.enums.SubjectInfoTypeEnum;
+import com.mint.subject.infra.basic.service.SubjectBriefService;
+
+import javax.annotation.Resource;
 
 /**
  * @Author Mint
@@ -9,6 +13,10 @@ import com.mint.subject.enums.SubjectInfoTypeEnum;
  * 简答题的策略
  */
 public class BriefTypeHandler implements SubjectTypeHandler{
+
+    @Resource
+    private SubjectBriefService subjectBriefService;
+
     @Override
     public SubjectInfoTypeEnum getHandlerType() {
         return SubjectInfoTypeEnum.BRIEF;
@@ -16,6 +24,9 @@ public class BriefTypeHandler implements SubjectTypeHandler{
 
     @Override
     public void add(SubjectInfoDTO subjectInfoDTO) {
-
+        SubjectBrief brief = new SubjectBrief();
+        brief.setSubjectId(subjectInfoDTO.getId());
+        brief.setSubjectAnswer(subjectInfoDTO.getSubjectAnswer());
+        subjectBriefService.save(brief);
     }
 }

@@ -26,7 +26,7 @@ public class SubjectBrief extends BasePo {
     /**
      * 题目id
      */
-    private Integer subjectId;
+    private Long subjectId;
     /**
      * 题目答案
      */
