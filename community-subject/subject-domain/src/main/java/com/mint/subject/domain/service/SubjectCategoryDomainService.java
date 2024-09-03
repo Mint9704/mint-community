@@ -9,11 +9,11 @@ import java.util.List;
  * @Create 2024/8/10
  */
 public interface SubjectCategoryDomainService {
-    Integer add(SubjectCategory subjectCategory);
+    Boolean add(SubjectCategory subjectCategory);
 
-    Integer update(SubjectCategory subjectCategory);
+    Boolean update(SubjectCategory subjectCategory);
 
-    Integer delete(Long id);
+    Boolean delete(Long id);
 
     List<SubjectCategory> list(SubjectCategory subjectCategory);
 }

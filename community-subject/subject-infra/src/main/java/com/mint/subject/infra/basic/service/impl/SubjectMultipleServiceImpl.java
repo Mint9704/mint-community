@@ -13,35 +13,6 @@ import java.util.List;
 
 @Service
 public class SubjectMultipleServiceImpl extends ServiceImpl<SubjectMultipleMapper, SubjectMultiple> implements SubjectMultipleService {
-
-    @Resource
-    private SubjectMultipleMapper subjectMultipleMapper;
-
-    @Override
-    public int add(SubjectMultiple subjectMultiple) {
-        return subjectMultipleMapper.insert(subjectMultiple);
-    }
-
-    @Override
-    public void batchAdd(List<SubjectMultiple> multipleList) {
-        this.saveBatch(multipleList);
-    }
-
-    @Override
-    public int update(SubjectMultiple subjectMultiple) {
-        return subjectMultipleMapper.updateById(subjectMultiple);
-    }
-
-    @Override
-    public int delete(Long id) {
-        return subjectMultipleMapper.deleteById(id);
-    }
-
-    @Override
-    public SubjectMultiple get(Long id) {
-        return subjectMultipleMapper.selectById(id);
-    }
-
     @Override
     public IPage<SubjectMultiple> list(SubjectMultiple subjectMultiple, long pageNum, long pageSize) {
         IPage<SubjectMultiple> page = page(new Page<>(pageNum, pageSize));

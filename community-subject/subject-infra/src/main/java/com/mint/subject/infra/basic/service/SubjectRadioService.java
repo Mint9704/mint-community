@@ -7,15 +7,5 @@ import com.mint.subject.entity.SubjectRadio;
 import java.util.List;
 
 public interface SubjectRadioService extends IService<SubjectRadio> {
-    int add(SubjectRadio subjectRadio);
-
-    void batchAdd(List<SubjectRadio> radioList);
-
-    int update(SubjectRadio subjectRadio);
-
-    int delete(Long id);
-
-    SubjectRadio get(Long id);
-
     IPage<SubjectRadio> list(SubjectRadio subjectRadio, long pageNum, long pageSize);
 }

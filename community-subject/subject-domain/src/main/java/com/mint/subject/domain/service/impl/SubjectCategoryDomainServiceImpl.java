@@ -19,18 +19,18 @@ public class SubjectCategoryDomainServiceImpl implements SubjectCategoryDomainSe
     private SubjectCategoryService subjectCategoryService;
 
     @Override
-    public Integer add(SubjectCategory subjectCategory) {
-        return subjectCategoryService.add(subjectCategory);
+    public Boolean add(SubjectCategory subjectCategory) {
+        return subjectCategoryService.save(subjectCategory);
     }
 
     @Override
-    public Integer update(SubjectCategory subjectCategory) {
-        return subjectCategoryService.update(subjectCategory);
+    public Boolean update(SubjectCategory subjectCategory) {
+        return subjectCategoryService.updateById(subjectCategory);
     }
 
     @Override
-    public Integer delete(Long id) {
-        return subjectCategoryService.delete(id);
+    public Boolean delete(Long id) {
+        return subjectCategoryService.removeById(id);
     }
 
     @Override

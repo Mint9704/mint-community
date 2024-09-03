@@ -20,7 +20,7 @@
         <druid.version>1.2.8</druid.version>
         <mysql.version>8.0.22</mysql.version>
         <mybatis-plus.version>3.4.0</mybatis-plus.version>
-        <lombok.version>1.16.22</lombok.version>
+        <lombok.version>1.18.24</lombok.version>
         <fastjson.version>1.2.83</fastjson.version>
         <guava.version>19.0</guava.version>
         <mapstruct.version>1.4.1.Final</mapstruct.version>

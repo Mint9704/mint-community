@@ -31,23 +31,23 @@ public class SubjectLabelDomainServiceImpl implements SubjectLabelDomainService 
     private SubjectMappingService subjectMappingService;
 
     @Override
-    public Integer add(SubjectLabel subjectLabel) {
-        return subjectLabelService.add(subjectLabel);
+    public Boolean add(SubjectLabel subjectLabel) {
+        return subjectLabelService.save(subjectLabel);
     }
 
     @Override
-    public Integer update(SubjectLabel subjectLabel) {
-        return subjectLabelService.update(subjectLabel);
+    public Boolean update(SubjectLabel subjectLabel) {
+        return subjectLabelService.updateById(subjectLabel);
     }
 
     @Override
-    public Integer delete(Long id) {
-        return subjectLabelService.delete(id);
+    public Boolean delete(Long id) {
+        return subjectLabelService.removeById(id);
     }
 
     @Override
     public List<SubjectLabel> queryLabelByCategoryId(Long categoryId) {
-        SubjectCategory subjectCategory = subjectCategoryService.get(categoryId);
+        SubjectCategory subjectCategory = subjectCategoryService.getById(categoryId);
         if (CategoryTypeEnum.PRIMARY.getCode() == subjectCategory.getCategoryType()) {
             SubjectLabel subjectLabel = new SubjectLabel();
             return subjectLabelService.list(subjectLabel);

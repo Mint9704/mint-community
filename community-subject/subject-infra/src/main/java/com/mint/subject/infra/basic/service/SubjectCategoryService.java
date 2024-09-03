@@ -7,13 +7,5 @@ import com.mint.subject.entity.SubjectCategory;
 import java.util.List;
 
 public interface SubjectCategoryService extends IService<SubjectCategory> {
-    int add(SubjectCategory subjectInfo);
-
-    int update(SubjectCategory subjectInfo);
-
-    int delete(Long id);
-
-    SubjectCategory get(Long id);
-
     List<SubjectCategory> list(SubjectCategory subjectCategory);
 }

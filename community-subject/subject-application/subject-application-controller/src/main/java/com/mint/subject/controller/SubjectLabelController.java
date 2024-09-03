@@ -19,17 +19,17 @@ public class SubjectLabelController {
     private SubjectLabelDomainService subjectLabelDomainService;
 
     @PostMapping("/add")
-    public Result<Integer> add(@RequestBody SubjectLabel subjectLabel) {
+    public Result<Boolean> add(@RequestBody SubjectLabel subjectLabel) {
         return Result.success(subjectLabelDomainService.add(subjectLabel));
     }
 
     @PutMapping("/update")
-    public Result<Integer> update(@RequestBody SubjectLabel subjectLabel) {
+    public Result<Boolean> update(@RequestBody SubjectLabel subjectLabel) {
         return Result.success(subjectLabelDomainService.update(subjectLabel));
     }
 
     @DeleteMapping("/delete/{id}")
-    public Result<Integer> delete(@PathVariable("id") Long id) {
+    public Result<Boolean> delete(@PathVariable("id") Long id) {
         return Result.success(subjectLabelDomainService.delete(id));
     }
 

@@ -12,30 +12,6 @@ import javax.annotation.Resource;
 
 @Service
 public class SubjectInfoServiceImpl extends ServiceImpl<SubjectInfoMapper, SubjectInfo> implements SubjectInfoService {
-
-    @Resource
-    private SubjectInfoMapper subjectInfoMapper;
-
-    @Override
-    public int add(SubjectInfo subjectInfo) {
-        return subjectInfoMapper.insert(subjectInfo);
-    }
-
-    @Override
-    public int update(SubjectInfo subjectInfo) {
-        return subjectInfoMapper.updateById(subjectInfo);
-    }
-
-    @Override
-    public int delete(Long id) {
-        return subjectInfoMapper.deleteById(id);
-    }
-
-    @Override
-    public SubjectInfo get(Long id) {
-        return subjectInfoMapper.selectById(id);
-    }
-
     @Override
     public IPage<SubjectInfo> list(SubjectInfo subjectInfo, long pageNum, long pageSize) {
         IPage<SubjectInfo> page = page(new Page<>(pageNum, pageSize));

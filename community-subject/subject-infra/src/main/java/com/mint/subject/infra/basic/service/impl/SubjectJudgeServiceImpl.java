@@ -12,30 +12,6 @@ import javax.annotation.Resource;
 
 @Service
 public class SubjectJudgeServiceImpl extends ServiceImpl<SubjectJudgeMapper, SubjectJudge> implements SubjectJudgeService {
-
-    @Resource
-    private SubjectJudgeMapper subjectJudgeMapper;
-
-    @Override
-    public int add(SubjectJudge subjectJudge) {
-        return subjectJudgeMapper.insert(subjectJudge);
-    }
-
-    @Override
-    public int update(SubjectJudge subjectJudge) {
-        return subjectJudgeMapper.updateById(subjectJudge);
-    }
-
-    @Override
-    public int delete(Long id) {
-        return subjectJudgeMapper.deleteById(id);
-    }
-
-    @Override
-    public SubjectJudge get(Long id) {
-        return subjectJudgeMapper.selectById(id);
-    }
-
     @Override
     public IPage<SubjectJudge> list(SubjectJudge subjectJudge, long pageNum, long pageSize) {
         IPage<SubjectJudge> page = page(new Page<>(pageNum, pageSize));

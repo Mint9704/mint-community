@@ -6,6 +6,7 @@ import com.mint.subject.dto.SubjectOptionDTO;
 import com.mint.subject.entity.SubjectRadio;
 import com.mint.subject.enums.SubjectInfoTypeEnum;
 import com.mint.subject.infra.basic.service.SubjectRadioService;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  * @Create 2024/8/30
  * 单选题的策略
  */
+@Component
 public class RadioTypeHandler implements SubjectTypeHandler{
 
     @Resource

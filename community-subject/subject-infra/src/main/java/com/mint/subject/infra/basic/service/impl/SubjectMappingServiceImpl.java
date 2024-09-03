@@ -14,35 +14,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class SubjectMappingServiceImpl extends ServiceImpl<SubjectMappingMapper, SubjectMapping> implements SubjectMappingService {
-
-    @Resource
-    private SubjectMappingMapper subjectMappingMapper;
-
-    @Override
-    public int add(SubjectMapping subjectMapping) {
-        return subjectMappingMapper.insert(subjectMapping);
-    }
-
-    @Override
-    public void batchAdd(List<SubjectMapping> list) {
-        super.saveBatch(list);
-    }
-
-    @Override
-    public int update(SubjectMapping subjectMapping) {
-        return subjectMappingMapper.updateById(subjectMapping);
-    }
-
-    @Override
-    public int delete(Long id) {
-        return subjectMappingMapper.deleteById(id);
-    }
-
-    @Override
-    public SubjectMapping get(Long id) {
-        return subjectMappingMapper.selectById(id);
-    }
-
     @Override
     public List<Long> queryLabelIds(SubjectMapping subjectMapping) {
         QueryWrapper<SubjectMapping> queryWrapper = new QueryWrapper<>();

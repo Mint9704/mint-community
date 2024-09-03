@@ -14,30 +14,6 @@ import java.util.List;
 
 @Service
 public class SubjectCategoryServiceImpl extends ServiceImpl<SubjectCategoryMapper, SubjectCategory> implements SubjectCategoryService {
-
-    @Resource
-    private SubjectCategoryMapper subjectCategoryMapper;
-
-    @Override
-    public int add(SubjectCategory subjectCategory) {
-        return subjectCategoryMapper.insert(subjectCategory);
-    }
-
-    @Override
-    public int update(SubjectCategory subjectCategory) {
-        return subjectCategoryMapper.updateById(subjectCategory);
-    }
-
-    @Override
-    public int delete(Long id) {
-        return subjectCategoryMapper.deleteById(id);
-    }
-
-    @Override
-    public SubjectCategory get(Long id) {
-        return subjectCategoryMapper.selectById(id);
-    }
-
     @Override
     public List<SubjectCategory> list(SubjectCategory subjectCategory) {
         QueryWrapper<SubjectCategory> queryWrapper = new QueryWrapper<>();
@@ -61,6 +37,6 @@ public class SubjectCategoryServiceImpl extends ServiceImpl<SubjectCategoryMappe
             queryWrapper.eq("created_by", subjectCategory.getCreatedBy());
         }
 
-        return subjectCategoryMapper.selectList(queryWrapper);
+        return this.list(queryWrapper);
     }
 }

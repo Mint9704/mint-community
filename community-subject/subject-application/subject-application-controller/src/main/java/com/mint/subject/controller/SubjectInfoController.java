@@ -20,10 +20,6 @@ import javax.annotation.Resource;
 @RestController
 @RequestMapping("/subject/info")
 public class SubjectInfoController {
-
-    @Resource
-    private SubjectInfoService subjectInfoService;
-
     @Resource
     private SubjectInfoDomainService subjectInfoDomainService;
 
@@ -41,23 +37,23 @@ public class SubjectInfoController {
     }
 
     @PutMapping("/update")
-    public Result<Integer> updateSubject(@RequestBody SubjectInfo subjectInfo) {
-        return Result.success(subjectInfoService.update(subjectInfo));
+    public Result<Boolean> updateSubject(@RequestBody SubjectInfo subjectInfo) {
+        return Result.success();
     }
 
     @GetMapping("/get/{id}")
     public Result<SubjectInfo> getSubject(@PathVariable Long id) {
-        return Result.success(subjectInfoService.getById(id));
+        return Result.success(null);
     }
 
     @DeleteMapping("/delete/{id}")
-    public Result<Integer> deleteSubject(@PathVariable Long id) {
-        return Result.success(subjectInfoService.delete(id));
+    public Result<Boolean> deleteSubject(@PathVariable Long id) {
+        return Result.success(null);
     }
 
     @PostMapping("/page")
     public Result<IPage<SubjectInfo>> listSubject(@RequestBody SubjectInfo subjectInfo, @RequestParam Integer pageNum, @RequestParam Integer pageSize) {
-        return Result.success(subjectInfoService.list(subjectInfo, pageNum, pageSize));
+        return Result.success(null);
     }
 
 }

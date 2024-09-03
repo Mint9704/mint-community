@@ -35,7 +35,7 @@ public class SubjectInfoDomainServiceImpl implements SubjectInfoDomainService {
     @Transactional
     public void add(SubjectInfoDTO subjectInfoDTO) {
         SubjectInfo subjectInfo = SubjectInfoConverter.INSTANCE.convertSubjectInfoDTO2SubjectInfo(subjectInfoDTO);
-        subjectInfoService.add(subjectInfo);
+        subjectInfoService.save(subjectInfo);
         subjectInfoDTO.setId(subjectInfo.getId());
 
         SubjectTypeHandler handler = subjectTypeHandlerFactory.getHandler(subjectInfoDTO.getSubjectType());
@@ -57,6 +57,6 @@ public class SubjectInfoDomainServiceImpl implements SubjectInfoDomainService {
                );
            }
         );
-        subjectMappingService.batchAdd(mappingList);
+        subjectMappingService.saveBatch(mappingList);
     }
 }

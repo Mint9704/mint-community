@@ -13,36 +13,6 @@ import java.util.List;
 
 @Service
 public class SubjectRadioServiceImpl extends ServiceImpl<SubjectRadioMapper, SubjectRadio> implements SubjectRadioService {
-
-    @Resource
-    private SubjectRadioMapper subjectRadioMapper;
-
-    @Override
-    public int add(SubjectRadio subjectRadio) {
-        return subjectRadioMapper.insert(subjectRadio);
-    }
-
-    @Override
-    public void batchAdd(List<SubjectRadio> radioList) {
-        this.saveBatch(radioList);
-    }
-
-    @Override
-    public int update(SubjectRadio subjectRadio) {
-        this.updateById(subjectRadio);
-        return subjectRadioMapper.updateById(subjectRadio);
-    }
-
-    @Override
-    public int delete(Long id) {
-        return subjectRadioMapper.deleteById(id);
-    }
-
-    @Override
-    public SubjectRadio get(Long id) {
-        return subjectRadioMapper.selectById(id);
-    }
-
     @Override
     public IPage<SubjectRadio> list(SubjectRadio subjectRadio, long pageNum, long pageSize) {
         IPage<SubjectRadio> page = page(new Page<>(pageNum, pageSize));

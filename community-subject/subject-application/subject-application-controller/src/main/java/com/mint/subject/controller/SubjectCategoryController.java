@@ -21,19 +21,19 @@ public class SubjectCategoryController {
     private SubjectCategoryDomainService subjectCategoryDomainService;
 
     @PostMapping("/add")
-    public Result<Integer> add(@RequestBody SubjectCategory subjectCategory) {
+    public Result<Boolean> add(@RequestBody SubjectCategory subjectCategory) {
         Preconditions.checkNotNull(subjectCategory.getCategoryType(), "分类类型不可为空");
         Preconditions.checkArgument(StringUtils.isNotBlank(subjectCategory.getCategoryName()), "分类名称不可为空");
         return Result.success(subjectCategoryDomainService.add(subjectCategory));
     }
 
     @PutMapping("/update")
-    public Result<Integer> update(@RequestBody SubjectCategory subjectCategory) {
+    public Result<Boolean> update(@RequestBody SubjectCategory subjectCategory) {
         return Result.success(subjectCategoryDomainService.update(subjectCategory));
     }
 
     @DeleteMapping("/delete/{id}")
-    public Result<Integer> delete(@PathVariable Long id) {
+    public Result<Boolean> delete(@PathVariable Long id) {
         return Result.success(subjectCategoryDomainService.delete(id));
     }
 

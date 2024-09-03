@@ -9,11 +9,11 @@ import java.util.List;
  * @Create 2024/8/12
  */
 public interface SubjectLabelDomainService {
-    Integer add(SubjectLabel subjectLabel);
+    Boolean add(SubjectLabel subjectLabel);
 
-    Integer update(SubjectLabel subjectLabel);
+    Boolean update(SubjectLabel subjectLabel);
 
-    Integer delete(Long id);
+    Boolean delete(Long id);
 
     List<SubjectLabel> queryLabelByCategoryId(Long categoryId);
 }

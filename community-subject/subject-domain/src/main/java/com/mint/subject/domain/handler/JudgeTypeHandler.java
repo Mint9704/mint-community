@@ -4,6 +4,7 @@ import com.mint.subject.dto.SubjectInfoDTO;
 import com.mint.subject.entity.SubjectJudge;
 import com.mint.subject.enums.SubjectInfoTypeEnum;
 import com.mint.subject.infra.basic.service.SubjectJudgeService;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
@@ -12,6 +13,7 @@ import javax.annotation.Resource;
  * @Create 2024/8/30
  * 判断题的策略
  */
+@Component
 public class JudgeTypeHandler implements SubjectTypeHandler{
 
     @Resource
