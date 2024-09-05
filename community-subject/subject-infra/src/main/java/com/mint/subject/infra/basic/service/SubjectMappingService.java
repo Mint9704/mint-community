@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface SubjectMappingService extends IService<SubjectMapping> {
     List<Long> queryLabelIds(SubjectMapping subjectMapping);
+
+    List<Long> querySubjectIds(SubjectMapping subjectMapping);
 }

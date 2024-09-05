@@ -1,6 +1,9 @@
 package com.mint.subject.domain.service;
 
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mint.subject.dto.SubjectInfoDTO;
+import com.mint.subject.entity.SubjectInfo;
+import com.mint.subject.vo.SubjectInfoVO;
 
 /**
  * @Author Mint
@@ -8,4 +11,6 @@ import com.mint.subject.dto.SubjectInfoDTO;
  */
 public interface SubjectInfoDomainService {
     void add(SubjectInfoDTO subjectInfoDTO);
+
+    IPage<SubjectInfoVO> page(SubjectInfoDTO subjectInfoDTO);
 }

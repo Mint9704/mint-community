@@ -6,9 +6,9 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.google.common.base.Preconditions;
 import com.mint.subject.domain.service.SubjectInfoDomainService;
 import com.mint.subject.dto.SubjectInfoDTO;
+import com.mint.subject.vo.SubjectInfoVO;
 import com.mint.web.entity.Result;
 import com.mint.subject.entity.SubjectInfo;
-import com.mint.subject.infra.basic.service.SubjectInfoService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -52,8 +52,10 @@ public class SubjectInfoController {
     }
 
     @PostMapping("/page")
-    public Result<IPage<SubjectInfo>> listSubject(@RequestBody SubjectInfo subjectInfo, @RequestParam Integer pageNum, @RequestParam Integer pageSize) {
-        return Result.success(null);
+    public Result<IPage<SubjectInfoVO>> listSubject(@RequestBody SubjectInfoDTO subjectInfoDTO) {
+        Preconditions.checkNotNull(subjectInfoDTO.getCategoryId(), "分类id不能为空");
+        Preconditions.checkNotNull(subjectInfoDTO.getLabelId(), "标签id不能为空");
+        return Result.success(subjectInfoDomainService.page(subjectInfoDTO));
     }
 
 }

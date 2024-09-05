@@ -5,6 +5,7 @@ import com.mint.subject.dto.SubjectOptionDTO;
 import com.mint.subject.entity.SubjectInfo;
 import com.mint.subject.entity.SubjectMultiple;
 import com.mint.subject.entity.SubjectRadio;
+import com.mint.subject.vo.SubjectInfoVO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
@@ -24,4 +25,5 @@ public interface SubjectInfoConverter {
 
     List<SubjectMultiple> convertOptionList2MultipleList(List<SubjectOptionDTO> optionList);
 
+    List<SubjectInfoVO> convertSubjectInfoList2VoList(List<SubjectInfo> subjectInfoList);
 }

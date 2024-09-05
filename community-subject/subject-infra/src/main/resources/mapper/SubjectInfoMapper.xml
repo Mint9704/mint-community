@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mint.subject.infra.basic.mapper.SubjectInfoMapper">
+    <select id="queryPage" resultType="com.mint.subject.entity.SubjectInfo">
+        select info.* from subject_info info
+        join subject_mapping mapping
+        on info.id = mapping.subject_id
+        <where>
+            info.is_deleted = 0
+            and mapping.is_deleted = 0
+            and mapping.category_id = #{categoryId}
+            and mapping.label_id = #{labelId}
+            <if test="subjectInfo.subjectName != null and subjectInfo.subjectName != ''">
+                and info.subject_name like concat('%',#{subjectName},'%')
+            </if>
+            <if test="subjectInfo.subjectType != null">
+                and info.subject_type = #{subjectType}
+            </if>
+        </where>
+        limit #{start},#{pageSize}
+    </select>
+</mapper>

@@ -32,7 +32,24 @@ public class SubjectMappingServiceImpl extends ServiceImpl<SubjectMappingMapper,
         return this.list(queryWrapper)
                 .stream()
                 .map(SubjectMapping::getLabelId)
-                .distinct()
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<Long> querySubjectIds(SubjectMapping subjectMapping) {
+        QueryWrapper<SubjectMapping> queryWrapper = new QueryWrapper<>();
+        queryWrapper.select("distinct subject_id");
+        queryWrapper.eq("is_deleted", IsDeletedEnum.UN_DELETED.getCode());
+        if (subjectMapping.getCategoryId() != null) {
+            queryWrapper.eq("category_id", subjectMapping.getCategoryId());
+        }
+        if (subjectMapping.getLabelId() != null) {
+            queryWrapper.eq("label_id", subjectMapping.getLabelId());
+        }
+
+        return this.list(queryWrapper)
+                .stream()
+                .map(SubjectMapping::getSubjectId)
                 .collect(Collectors.toList());
     }
 }

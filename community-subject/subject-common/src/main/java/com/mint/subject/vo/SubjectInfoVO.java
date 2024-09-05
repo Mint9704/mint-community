@@ -1,4 +1,4 @@
-package com.mint.subject.dto;
+package com.mint.subject.vo;
 
 import com.mint.web.entity.BasePo;
 import lombok.AllArgsConstructor;
@@ -10,16 +10,13 @@ import java.util.List;
 
 /**
  * @Author Mint
- * @Create 2024/8/26
+ * @Create 2024/9/5
  */
 @Data
 @ToString(callSuper = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class SubjectInfoDTO extends BasePo {
-    /**
-     * 主键
-     */
+public class SubjectInfoVO extends BasePo {
     private Long id;
     /**
      * 题目名称
@@ -46,43 +43,7 @@ public class SubjectInfoDTO extends BasePo {
      */
     private String subjectParse;
     /**
-     * 题目答案
+     * 标签名称
      */
-    private String subjectAnswer;
-    /**
-     * 是否正确
-     */
-    private Integer isCorrect;
-    /**
-     * 分类 id
-     */
-    private List<Long> categoryIds;
-    /**
-     * 标签 id
-     */
-    private List<Long> labelIds;
-    /**
-     * 选项
-     */
-    private List<SubjectOptionDTO> options;
-
-    /**
-     * 分类 id
-     */
-    private Long categoryId;
-
-    /**
-     * 标签 id
-     */
-    private Long labelId;
-
-    /**
-     * 分页查询，页数
-     */
-    private Integer pageNum;
-
-    /**
-     * 分页查询，每页数据条数
-     */
-    private Integer pageSize;
+    private List<String> labelNames;
 }
