@@ -71,6 +71,14 @@ public class SubjectInfoDomainServiceImpl implements SubjectInfoDomainService {
     }
 
     @Override
+    public SubjectInfoVO get(Long id) {
+        SubjectInfo subjectInfo = subjectInfoService.getById(id);
+        SubjectTypeHandler handler = subjectTypeHandlerFactory.getHandler(subjectInfo.getSubjectType());
+        SubjectInfoVO subjectInfoVO = SubjectInfoConverter.INSTANCE.convertSubjectInfo2SubjectInfoVO(subjectInfo);
+        return handler.get(subjectInfoVO);
+    }
+
+    @Override
     public IPage<SubjectInfoVO> page(SubjectInfoDTO subjectInfoDTO) {
         SubjectMapping subjectMapping = new SubjectMapping();
         subjectMapping.setCategoryId(subjectInfoDTO.getCategoryId());

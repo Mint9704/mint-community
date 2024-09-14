@@ -36,19 +36,9 @@ public class SubjectInfoController {
         return Result.success();
     }
 
-    @PutMapping("/update")
-    public Result<Boolean> updateSubject(@RequestBody SubjectInfo subjectInfo) {
-        return Result.success();
-    }
-
     @GetMapping("/get/{id}")
-    public Result<SubjectInfo> getSubject(@PathVariable Long id) {
-        return Result.success(null);
-    }
-
-    @DeleteMapping("/delete/{id}")
-    public Result<Boolean> deleteSubject(@PathVariable Long id) {
-        return Result.success(null);
+    public Result<SubjectInfoVO> getSubject(@PathVariable Long id) {
+        return Result.success(subjectInfoDomainService.get(id));
     }
 
     @PostMapping("/page")

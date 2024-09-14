@@ -28,7 +28,7 @@ public class SubjectMultiple extends BasePo {
      */
     private Long subjectId;
     /**
-     * 选项类型
+     * a,b,c,d
      */
     private Long optionType;
     /**

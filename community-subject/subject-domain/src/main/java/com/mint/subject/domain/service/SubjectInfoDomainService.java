@@ -12,5 +12,7 @@ import com.mint.subject.vo.SubjectInfoVO;
 public interface SubjectInfoDomainService {
     void add(SubjectInfoDTO subjectInfoDTO);
 
+    SubjectInfoVO get(Long id);
+
     IPage<SubjectInfoVO> page(SubjectInfoDTO subjectInfoDTO);
 }

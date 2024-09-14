@@ -1,5 +1,9 @@
 package com.mint.subject.vo;
 
+import com.mint.subject.entity.SubjectBrief;
+import com.mint.subject.entity.SubjectJudge;
+import com.mint.subject.entity.SubjectMultiple;
+import com.mint.subject.entity.SubjectRadio;
 import com.mint.web.entity.BasePo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -46,4 +50,19 @@ public class SubjectInfoVO extends BasePo {
      * 标签名称
      */
     private List<String> labelNames;
+
+    /**
+     * 简答题答案
+     */
+    private String subjectAnswer;
+
+    /**
+     * 判断题答案
+     */
+    private Integer isCorrect;
+
+    /**
+     * 选择题详情
+     */
+    private List<SubjectOptionVO> optionList;
 }

@@ -2,6 +2,7 @@ package com.mint.subject.domain.handler;
 
 import com.mint.subject.dto.SubjectInfoDTO;
 import com.mint.subject.enums.SubjectInfoTypeEnum;
+import com.mint.subject.vo.SubjectInfoVO;
 
 /**
  * @Author Mint
@@ -11,4 +12,6 @@ public interface SubjectTypeHandler {
     SubjectInfoTypeEnum getHandlerType();
 
     void add(SubjectInfoDTO subjectInfoDTO);
+
+    SubjectInfoVO get(SubjectInfoVO subjectInfoVO);
 }
