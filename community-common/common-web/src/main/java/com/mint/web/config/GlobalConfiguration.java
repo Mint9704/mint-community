@@ -1,5 +1,6 @@
 package com.mint.web.config;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +10,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupp
 
 import java.util.List;
 
+/**
+ * MVC的全局处理
+ */
 @Configuration
 public class GlobalConfiguration extends WebMvcConfigurationSupport {
 
@@ -21,6 +25,7 @@ public class GlobalConfiguration extends WebMvcConfigurationSupport {
     private MappingJackson2HttpMessageConverter mappingJackson2HttpMessageConverter() {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter(objectMapper);
         return converter;
     }
